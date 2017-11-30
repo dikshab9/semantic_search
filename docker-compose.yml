@@ -33,10 +33,10 @@ services:
   #     MYSQL_ROOT_PASSWORD : mysql
   #     MYSQL_DATABASE : OAUTH
 
-   ui : 
-     build : ./UserUI
-     ports : 
-       - "4200:4200"
+  ui: 
+    build : ./UserUI
+    ports :
+      - "4200:4200"
 
   # auth : 
   #   build : ./OAuthService
