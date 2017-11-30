@@ -59,7 +59,7 @@ public class CrawlerController {
 		 
 		 	crawlerModel.setUrl(customurl.getUrl());
 			crawlerModel.setDomain(customurl.getDomain());
-			crawlerModel.setConcept(customurl.getDomain());
+			crawlerModel.setConcept(customurl.getConcept());
 			crawlerModel.setDoc(pageContent.toString());
 			crawlerModel.setSnippet(snippet);
 			crawlerModel.setTitle(title);
