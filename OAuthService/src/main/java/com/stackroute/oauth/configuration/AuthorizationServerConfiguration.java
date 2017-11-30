@@ -1,7 +1,7 @@
 package com.stackroute.oauth.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.annotation.Order;
@@ -21,8 +21,8 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     @Autowired
     private AuthenticationManager authenticationManager;
 
-//    @Value("${endpoints.cors.allowed-origins}")
-//    private String originAllowedUrl;
+    @Value("${endpoints.cors.allowed-origins}")
+    private String originAllowedUrl;
     
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {

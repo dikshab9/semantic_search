@@ -88,3 +88,98 @@ JAVA:INT:86,elemental,JAVA:INT:2,term,intent,indicatorOf,7
 JAVA:INT:87,necessary,JAVA:INT:2,term,intent,indicatorOf,6
 JAVA:INT:88,key,JAVA:INT:2,term,intent,indicatorOf,5
 JAVA:INT:89,focal,JAVA:INT:2,term,intent,indicatorOf,5
+JAVA:INT:90,fundamental,JAVA:INT:3,term,intent,indicatorOf,4
+JAVA:INT:91,workings,JAVA:INT:3,term,intent,indicatorOf,8
+JAVA:INT:92,elements,JAVA:INT:3,term,intent,indicatorOf,8
+JAVA:INT:93,underlying,JAVA:INT:3,term,intent,indicatorOf,8
+JAVA:INT:94,rudimentary,JAVA:INT:3,term,intent,indicatorOf,8
+JAVA:INT:95,canonical,JAVA:INT:3,term,intent,indicatorOf,8
+JAVA:INT:96,necessities,JAVA:INT:3,term,intent,indicatorOf,8
+JAVA:INT:97,foundations,JAVA:INT:3,term,intent,indicatorOf,8
+JAVA:INT:98,base,JAVA:INT:3,term,intent,indicatorOf,8
+JAVA:INT:99,blocks,JAVA:INT:3,term,intent,indicatorOf,8
+JAVA:INT:100,core,JAVA:INT:3,term,intent,indicatorOf,8
+JAVA:INT:101,underpinnings,JAVA:INT:3,term,intent,indicatorOf,8
+JAVA:INT:102,simple,JAVA:INT:3,term,intent,indicatorOf,7
+JAVA:INT:103,vital,JAVA:INT:3,term,intent,indicatorOf,7
+JAVA:INT:104,certain,JAVA:INT:3,term,intent,indicatorOf,7
+JAVA:INT:105,theory,JAVA:INT:3,term,intent,indicatorOf,7
+JAVA:INT:106,plain,JAVA:INT:3,term,intent,indicatorOf,7
+JAVA:INT:107,cardinal,JAVA:INT:3,term,intent,indicatorOf,7
+JAVA:INT:108,first,JAVA:INT:3,term,intent,indicatorOf,7
+JAVA:INT:109,preliminary,JAVA:INT:3,term,intent,indicatorOf,7
+JAVA:INT:110,start,JAVA:INT:3,term,intent,indicatorOf,7
+JAVA:INT:111,lesson,JAVA:INT:3,term,intent,indicatorOf,9
+JAVA:INT:112,academic,JAVA:INT:3,term,intent,indicatorOf,9
+JAVA:INT:113,seminar,JAVA:INT:3,term,intent,indicatorOf,9
+JAVA:INT:114,educative,JAVA:INT:3,term,intent,indicatorOf,9
+JAVA:INT:115,practical,JAVA:INT:3,term,intent,indicatorOf,9
+JAVA:INT:116,guidance,JAVA:INT:3,term,intent,indicatorOf,9
+JAVA:INT:117,drill,JAVA:INT:3,term,intent,indicatorOf,6
+JAVA:INT:118,informative,JAVA:INT:3,term,intent,indicatorOf,6
+JAVA:INT:119,operative,JAVA:INT:3,term,intent,indicatorOf,6
+JAVA:INT:120,preparation,JAVA:INT:3,term,intent,indicatorOf,6
+JAVA:INT:121,scholastic,JAVA:INT:3,term,intent,indicatorOf,6
+JAVA:INT:122,tuition,JAVA:INT:3,term,intent,indicatorOf,6
+JAVA:INT:123,course,JAVA:INT:3,term,intent,indicatorOf,6
+JAVA:INT:124,course of study,JAVA:INT:3,term,intent,indicatorOf,6
+JAVA:INT:125,help,JAVA:INT:3,term,intent,indicatorOf,6
+JAVA:INT:126,lecture,JAVA:INT:3,term,intent,indicatorOf,6
+JAVA:INT:127,session,JAVA:INT:3,term,intent,indicatorOf,6
+JAVA:INT:128,schooling,JAVA:INT:3,term,intent,indicatorOf,6
+JAVA:INT:129,educate,JAVA:INT:3,term,intent,indicatorOf,6
+JAVA:INT:130,college,JAVA:INT:3,term,intent,indicatorOf,6
+JAVA:INT:131,doctrinal,JAVA:INT:3,term,intent,indicatorOf,6
+JAVA:INT:132,illustration,JAVA:INT:4,term,intent,indicatorOf,6
+JAVA:INT:133,exemplification,JAVA:INT:4,term,intent,indicatorOf,6
+JAVA:INT:134,representation,JAVA:INT:4,term,intent,indicatorOf,6
+JAVA:INT:135,sampling,JAVA:INT:4,term,intent,indicatorOf,6
+JAVA:INT:136,standard,JAVA:INT:4,term,intent,indicatorOf,6
+JAVA:INT:137,citation,JAVA:INT:4,term,intent,indicatorOf,6
+JAVA:INT:138,ideal,JAVA:INT:4,term,intent,indicatorOf,6
+JAVA:INT:139,exemplar,JAVA:INT:4,term,intent,indicatorOf,6
+JAVA:INT:140,original,JAVA:INT:4,term,intent,indicatorOf,6
+JAVA:INT:141,prototype,JAVA:INT:4,term,intent,indicatorOf,5
+JAVA:INT:142,stereotypical,JAVA:INT:4,term,intent,indicatorOf,5
+JAVA:INT:143,paradigm,JAVA:INT:4,term,intent,indicatorOf,5
+JAVA:INT:144,archetype,JAVA:INT:4,term,intent,indicatorOf,5
+JAVA:INT:145,such as,JAVA:INT:4,term,intent,indicatorOf,5
+JAVA:INT:146,for instance,JAVA:INT:4,term,intent,indicatorOf,5
+JAVA:INT:147,eg.,JAVA:INT:4,term,intent,indicatorOf,5
+JAVA:INT:148,likeness,JAVA:INT:4,term,intent,indicatorOf,5
+JAVA:INT:149,identification,JAVA:INT:4,term,intent,indicatorOf,5
+JAVA:INT:150,paragon,JAVA:INT:4,term,intent,indicatorOf,5
+JAVA:INT:151,model,JAVA:INT:4,term,intent,indicatorOf,5
+JAVA:INT:152,case in point,JAVA:INT:4,term,intent,indicatorOf,5
+JAVA:INT:153,maintenance,JAVA:INT:6,term,intent,indicatorOf,7
+JAVA:INT:154,diagnosis,JAVA:INT:6,term,intent,indicatorOf,7
+JAVA:INT:155,problem-solving,JAVA:INT:6,term,intent,indicatorOf,7
+JAVA:INT:156,debug,JAVA:INT:6,term,intent,indicatorOf,7
+JAVA:INT:157,correction,JAVA:INT:6,term,intent,indicatorOf,7
+JAVA:INT:158,damage control,JAVA:INT:6,term,intent,indicatorOf,7
+JAVA:INT:159,fault detection,JAVA:INT:6,term,intent,indicatorOf,7
+JAVA:INT:160,malfunction,JAVA:INT:6,term,intent,indicatorOf,7
+JAVA:INT:161,help line,JAVA:INT:6,term,intent,indicatorOf,7
+JAVA:INT:162,fault isolation,JAVA:INT:6,term,intent,indicatorOf,8
+JAVA:INT:163,trouble,JAVA:INT:6,term,intent,indicatorOf,8
+JAVA:INT:164,technical support,JAVA:INT:6,term,intent,indicatorOf,8
+JAVA:INT:165,conflict,JAVA:INT:6,term,intent,indicatorOf,8
+JAVA:INT:166,error,JAVA:INT:6,term,intent,indicatorOf,8
+JAVA:INT:167,aid,JAVA:INT:6,term,intent,indicatorOf,3
+JAVA:INT:168,remedy,JAVA:INT:6,term,intent,indicatorOf,3
+JAVA:INT:169,satisfied,JAVA:INT:6,term,intent,indicatorOf,3
+JAVA:INT:170,identify,JAVA:INT:6,term,intent,indicatorOf,3
+JAVA:INT:171,most trusted online community for developers to learn,JAVA:INT:6,term,intent,indicatorOf,100
+JAVA:INT:172,programming ​knowledge,JAVA:INT:6,term,intent,indicatorOf,100
+JAVA:INT:173,"java tutorial, core java tutorial, beginners, professionals",JAVA:INT:3,term,intent,indicatorOf,100
+JAVA:INT:174,tutorials for developers and business users of Oracle Cloud services,JAVA:INT:2,term,intent,indicatorOf,100
+JAVA:INT:175,"Java Cloud Service, Database Cloud",JAVA:INT:2,term,intent,indicatorOf,100
+JAVA:INT:176,Sharper Insight. Smarter Investing.,JAVA:INT:2,term,intent,indicatorOf,100
+JAVA:INT:177,leading source of financial content on the web,JAVA:INT:2,term,intent,indicatorOf,100
+JAVA:INT:178,investing education to insights from advisors,JAVA:INT:2,term,intent,indicatorOf,100
+JAVA:INT:179, online courses that provide on-the-job skills,JAVA:INT:3,term,intent,indicatorOf,100
+JAVA:INT:180,Self-paced,JAVA:INT:3,term,intent,indicatorOf,100
+JAVA:INT:181,Guide to Financial Fitness,JAVA:INT:4,term,intent,indicatorOf,100
+JAVA:INT:182,business news,JAVA:INT:5,term,intent,indicatorOf,70
+JAVA:INT:183,personal finance,JAVA:INT:5,term,intent,indicatorOf,70
+JAVA:INT:184,share market news india,JAVA:INT:5,term,intent,indicatorOf,70

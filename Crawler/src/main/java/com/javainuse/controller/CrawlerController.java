@@ -17,6 +17,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -39,47 +42,40 @@ public class CrawlerController {
 
 	// to create CrawlerServices object
 	CrawlerServices crawlerservices = new CrawlerServices();
-
-
-
-	@Autowired
-	Listener listen;
 	
-//	String url="https://coursetro.com/posts/code/55/How-to-Install-an-Angular-4-App";
-	
+		
+	@CrossOrigin("*")
 	@RequestMapping()
 	public ResponseEntity<?> getCrawlerResult()
 			throws MalformedURLException, IOException, UrlNotFound, InterruptedException, ExecutionException {
 
-//
-//		SearchResultsModel resultList = listen.getResultList();
-////		List<Result> rs = resultList.getItems();
-//		
-////					System.out.println(rs.toString()
-////							);
-//			for(int i=0;i<10;i++) {
-//				
-//				Result res = resultList.getItems().get(i);
-//				System.out.println(res.getFormattedUrl());
-//				System.out.println(i+ "   " +res);
-//				
-//				// to retrieve xml page
-//				Document pageContent = crawlerservices.PageContent(res.getFormattedUrl());
-//				CrawlerModel crawlerModel = new CrawlerModel();
-//				
-//				crawlerModel.setUrl(res.getFormattedUrl());
-//				crawlerModel.setDoc(pageContent.toString());
-//				crawlerModel.setSnippet(res.getDisplayLink());
-//				crawlerModel.setTitle(res.getTitle());
-//				
-//				kafkaSender.send(crawlerModel);
-//				
-//				
-//			}
-//			
-//		}
-		return new ResponseEntity<String>("dodoododod0", HttpStatus.OK);
+
+		return new ResponseEntity<String>("crawler response", HttpStatus.OK);
 }
+	
+	 @CrossOrigin("*")
+	    @PostMapping("/{domain}/{concept}/{url}")
+	    public ResponseEntity<?> add(@PathVariable String domain,@PathVariable String concept , @PathVariable String url) throws InterruptedException, IOException {
+		 CrawlerModel crawlerModel = new CrawlerModel();
+		 Document pageContent = crawlerservices.PageContent(url);
+		 
+		 String title= domain+" "+concept+" "+"(Recomended By Domain Expert)";
+		 String snippet="This Url is custom added by the domain expert" + " "+"Domain:"+domain+" "+ "Concept:"+concept ;
+		 
+		 	crawlerModel.setUrl(url);
+			crawlerModel.setDomain(domain);
+			crawlerModel.setConcept(concept);
+			crawlerModel.setDoc(pageContent.toString());
+			crawlerModel.setSnippet(snippet);
+			crawlerModel.setTitle(title);
+			
+			kafkaSender.send(crawlerModel);
+//			
+		 
+			return new ResponseEntity<String>("Url Succesfully Added.", HttpStatus.OK);
+	        
+	 }
+	
 }		
 			
 			

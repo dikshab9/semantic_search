@@ -17,11 +17,7 @@ public class Sender {
 	String kafkaTopic = "crawlerproducer";
 //	@Async
 	public void send(CrawlerModel message) {
-//		System.out.println("sending message"+message);
-//		CrawlerModel m=new CrawlerModel();
-//		m.setDoc("hi");
-//		m.setUrl("url");
-//		System.out.println("aaaaaaaaaaaaaaaaaaa");
+
 	    kafkaTemplate.send(kafkaTopic, message);
 	}
 }
