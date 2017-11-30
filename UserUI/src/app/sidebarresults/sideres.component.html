@@ -51,16 +51,45 @@
                             <br>
                         <p id="red">{{text}}</p>
                   <p class="correctedquery"> <em><strong>{{correctedquery}}</strong></em></p>
+                  <p *ngIf="respTime"  class="noresults">{{noresults}} results in ({{responseTime}}) seconds</p>
                 </div>
                     
                     <div *ngFor="let item of serverResponse">
-                        <mat-card>
+                        <mat-card class="mat">
                         <a href="{{item.urlFromGoogle.name}}" target="_blank"><h4 id="title">{{item.urlFromGoogle.title}}</h4></a>
                         <a href="{{item.urlFromGoogle.name}}" target="_blank" ><h5 id="url" >{{item.urlFromGoogle.name}}</h5></a>
                         <h5>{{item.urlFromGoogle.snippet}}</h5>
+                        <!-- <div class="conceptintent">
+                        <p class="concept"><em>Concept: </em><font class="conceptcolor">{{item.concept2.name}}</font>  · </p>
+                        <p class="intent"> <em>Intent: </em><font class="conceptcolor">{{item.concept2.name}}</font> · </p>
+                        <p class="confidence">  <em>Confidence score: </em><font class="conceptcolor">{{item.concept2.name}}</font></p>
+                       
+                    </div> -->
                     </mat-card>
                     <br>
                     </div>
+
+                    <!-- <div >
+                        <mat-card class="mat">
+                        <a href="#" target="_blank">oiuhlkhjjjjjjjjjjjjjjjjjjjjjjjjjj <h4 id="title"></h4></a>
+                        <a href="#" target="_blank" >piojlihjilh<h5 id="url" ></h5></a>
+                        <h5>kjbhjkbjk</h5>
+                    <div class="conceptintent">
+                        <p class="concept">concept: </p>
+                   
+                    
+                        <p class="intent">intent: </p>
+                    
+                       
+                        <p class="confidence">confidence score: </p>
+                   </div>
+                    
+                    </mat-card>
+                    <br>
+                    </div> -->
+
+
+
                 </div><!--end of col-sm-9-->
                 </div><!--end of container-->
             </div>
@@ -70,17 +99,32 @@
             <h4 class="popular">Popular Searches</h4>
             <br>
             <br>
-            <mat-card class="cards">
+            <div  *ngIf="this.flagJava">
+            <mat-card class="cards" (click)="send('interface')">
                 Interface
                 <div class="interface"></div>
             </mat-card>
-            <mat-card class="cards">
+            <mat-card class="cards" (click)="send('class')">
                     class
                     <div class="class"></div>
                 </mat-card>
-                <mat-card class="cards">
+                <mat-card class="cards" (click)="send('encapsulation')">
                         Encapsulation
                         <div class="encapsulation"></div>
                     </mat-card>
-
+                </div>
+                <div  *ngIf="this.flagInvest">
+                    <mat-card class="cards" (click)="send('investment')">
+                        investment
+                        <div class="investment"></div>
+                    </mat-card>
+                    <mat-card class="cards" (click)="send('inflation')">
+                            Inflation
+                            <div class="inflation"></div>
+                        </mat-card>
+                        <mat-card class="cards" (click)="send('equity')">
+                            Equity
+                                <div class="encapsulation"></div>
+                            </mat-card>
+                        </div>
         </div><!--end of searchdone-->

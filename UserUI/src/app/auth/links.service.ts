@@ -11,7 +11,9 @@ export class LinksService {
 
 
  constructor() {
-    this.authServiceLink = 'http://oauth:8087';
-    this.userServiceLink = 'http://oauth:8087/users/';
+    this.authServiceLink = 'http://172.23.238.184:8087';
+    this.userServiceLink = 'http://172.23.238.184:8087/users/';
+
   }
+
 }

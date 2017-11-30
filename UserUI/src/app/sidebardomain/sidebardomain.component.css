@@ -168,3 +168,31 @@ i{
 a{
   color: white;
 }
+
+.boxes{
+  color:#2c47ab;
+  width:100px;
+  height: 40px;
+  text-align: center;
+  border:2px solid #2c47ab;
+  border-radius: 10px;
+  float:right;
+  background-color: transparent;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.domain{
+  float: right;
+  
+  width:400px;
+}
+
+.domaincontent{
+ margin-top: 5px;
+}
+
+.domtitle{
+  text-align: center;
+}
+

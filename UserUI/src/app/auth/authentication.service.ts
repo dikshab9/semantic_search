@@ -55,6 +55,8 @@ export class AuthenticationService {
 
     }
 
+
+
    register(json: any) {
         this.headers = new Headers();
          this.headers.append('Content-Type', 'application/json');
@@ -91,6 +93,7 @@ export class AuthenticationService {
                   this._userservice.setToken(null);
                   this._userservice.setUserName(null);
                   this._userservice.setEmail(null);
+                  this._userservice.setPsaId(null);
                   this._userservice.setRoles(null);
                   localStorage.removeItem('currentUser');
                   console.log(this._userservice.getUserName());

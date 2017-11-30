@@ -8,7 +8,7 @@ export class DisplayService{
     
 
     query: string = "";
-    //private webUrl = 'http://localhost:8080/geturl';
+    private webUrl = 'http://localhost:8080/geturl';
     
     private headers = new Headers({'Content-Type': 'application/json',
 
@@ -56,7 +56,7 @@ export class DisplayService{
 
     postintentdomain() {
         console.log("inside post");
-         return this.http.post('http://13.126.183.132:5000/intentgraph/v1.0/semantic/neo4jintentservice/postcsvindicator?csvname=intentforindexing',JSON.stringify({}),{headers: this.headers})
+         return this.http.post('http://13.126.183.132:5000/intentgraph/v1.0/semantic/neo4jintentservice/postcsvindicator?csvname=aditya',JSON.stringify({}),{headers: this.headers})
                         .toPromise()
                         .then((res)=>res.text(),
                         

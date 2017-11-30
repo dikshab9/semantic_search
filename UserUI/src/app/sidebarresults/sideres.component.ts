@@ -16,8 +16,8 @@ export class SideResComponent implements OnInit {
 
   panelOpenState: boolean = false;
   searchdone: boolean= true;
-
   fetchedUrls;
+  concept:any;
   domain:any;
   intent:any="default";
  anjali:boolean=false;
@@ -28,8 +28,12 @@ export class SideResComponent implements OnInit {
   query:any;
   correctedquery:any;
   text:any;
+  noresults:any;
  flagJava:boolean=false;
  flagInvest:boolean=false;
+  start:any;
+  responseTime:any;
+  respTime:boolean=false;
  
   constructor(
     private route: ActivatedRoute,
@@ -37,12 +41,14 @@ export class SideResComponent implements OnInit {
  private usersApi:DisplayService,private _stompService: SocketService) { }
   
   ngOnInit() {
+    
     this.domain = this.route.snapshot.paramMap.get('domain');
     console.log(this.domain);
     if (this.domain=="java")
     this.flagJava=true;
     if (this.domain=="finance")
     this.flagInvest=true;
+    
 
     
 
@@ -50,11 +56,13 @@ export class SideResComponent implements OnInit {
   }
  
   public send(query): void {
-
+    this.start = new Date().getTime();
     console.log(query)
+    this.concept=query;
     this.serverResponse=null;
     this.correctedquery=null;
     this.text=null;
+    this.noresults=null;
     if(query==""){
     this.showLoader=false;
     }
@@ -78,6 +86,7 @@ export class SideResComponent implements OnInit {
         console.log("INSIDE QUERY");
         
            this.serverResponse =data.result;
+           this.respTime = true;
            if(this.serverResponse.length<1){
 
             this.text="no results available for the query";
@@ -85,94 +94,22 @@ export class SideResComponent implements OnInit {
            else{
              this.text="showing results for";
            this.correctedquery=data.correctedquery;
+           this.noresults="About "+this.serverResponse.length+" results"
            }
            this.showLoader=false;
            console.log("serverresponse"+this.serverResponse)
            
          });
+         
+
+    this.responseTime = new Date().getTime() - this.start;
     // this.anjali=false;
     // this.fake(query);
     console.log("SEND END");
+    this.respTime = false;
   }
 }
 
 
 
-
-
-
-   
-//   @Input() fetchedUrls;
-//   concept:any;
-//   intent:any = "basic";
-//   anjali:any;
-//   public inputField = '<enter some text>!';
-//   public serverResponse: UrlRelation[];
-//   constructor(private _stompService: SocketService,
-//     private route: ActivatedRoute,
-//     private router: Router,
-// private usersApi:DisplayService) { }
-  
-//   ngOnInit() {
-//     this.concept = this.route.snapshot.paramMap.get('concept');
-//     this.intent = this.route.snapshot.paramMap.get('intent');
-//     console.log(this.concept);
-//     console.log(this.intent);
-//     this.usersApi.postquery(this.concept,this.intent).then((res)=>{
-      
-//         this.fetchedUrls = res;
-//         console.log(res);
-      
-//     })
-//     // this._stompService.connect();
-//     this.fake();
-//   }
-
-//   onClick(value:string) {
-//     //  this.router.navigate(['/user']);
-//     location.reload();
-   
-//     console.log(value);
-//     console.log(this.intent);
-   
-//     this.router.navigate(['/sideres/'+value+'/'+this.intent]);
-      
-//   }
-
-//   public send(): void {
-//     console.log("hello"+this.inputField)
-//     this._stompService.sendMessage(this.inputField);
-//     console.log("SENT DONE");
-//     // this._stompService.socketMessages.subscribe( data => {
-//     //   console.log("data"+data);
-//     //        this.serverResponse =data;
-//     //        console.log("serverresponse"+this.serverResponse)
-//     //      });
-//     this.anjali=false;
-//     this.fake();
-//     console.log("SEND END");
-//   }
-
-//   fake(){
-//     console.log("INSIDE FAKE")
-//       setTimeout(()=>{
-//         console.log("INSIDE TIMEOUT")
-//         if(this.anjali){
-          
-//    // this.anjali=false;
-//         }
-//         if(!this.anjali){
-//           this._stompService.socketMessages.subscribe( data => {
-//           console.log("data"+data);
-//              this.serverResponse =data;
-//              console.log("serverresponse"+this.serverResponse)
-//              if(data!=null){
-//                console.log("DATA IS NOT NULL")
-//              this.anjali=true;}
-//            });
-//            console.log("RECURSION FAKE")
-//           this.fake();
-//         }
-//      }, 1000);
-//     }
 
