@@ -7,7 +7,6 @@ import java.io.IOException;
  */
 
 import java.net.MalformedURLException;
-import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import org.apache.log4j.Logger;
@@ -15,19 +14,15 @@ import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.javainuse.domain.CrawlerModel;
-import com.javainuse.domain.Result;
-import com.javainuse.domain.SearchResultsModel;
+import com.javainuse.domain.CustomUrl;
 import com.javainuse.exception.UrlNotFound;
-import com.javainuse.kafka.Listener;
 import com.javainuse.kafka.Sender;
 import com.javainuse.service.CrawlerServices;
 
@@ -54,23 +49,23 @@ public class CrawlerController {
 }
 	
 	 @CrossOrigin("*")
-	    @PostMapping("/{domain}/{concept}/{url}")
-	    public ResponseEntity<?> add(@PathVariable String domain,@PathVariable String concept , @PathVariable String url) throws InterruptedException, IOException {
+	    @PostMapping("/posturl")
+	    public ResponseEntity<?> add(@RequestBody CustomUrl customurl) throws InterruptedException, IOException {
 		 CrawlerModel crawlerModel = new CrawlerModel();
-		 Document pageContent = crawlerservices.PageContent(url);
+		 Document pageContent = crawlerservices.PageContent(customurl.getUrl());
 		 
-		 String title= domain+" "+concept+" "+"(Recomended By Domain Expert)";
-		 String snippet="This Url is custom added by the domain expert" + " "+"Domain:"+domain+" "+ "Concept:"+concept ;
+		 String title= customurl.getDomain()+" "+customurl.getConcept()+" "+"(Recomended By Domain Expert)";
+		 String snippet="This Url is custom added by the domain expert" + " "+"Domain:"+customurl.getDomain()+" "+ "Concept:"+customurl.getConcept() ;
 		 
-		 	crawlerModel.setUrl(url);
-			crawlerModel.setDomain(domain);
-			crawlerModel.setConcept(concept);
+		 	crawlerModel.setUrl(customurl.getUrl());
+			crawlerModel.setDomain(customurl.getDomain());
+			crawlerModel.setConcept(customurl.getDomain());
 			crawlerModel.setDoc(pageContent.toString());
 			crawlerModel.setSnippet(snippet);
 			crawlerModel.setTitle(title);
 			
 			kafkaSender.send(crawlerModel);
-//			
+			
 		 
 			return new ResponseEntity<String>("Url Succesfully Added.", HttpStatus.OK);
 	        

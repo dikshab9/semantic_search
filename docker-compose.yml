@@ -35,12 +35,12 @@ services:
       MYSQL_DATABASE: oauth
       MYSQL_USER: root
 
-  ui : 
-    build : ./UserUI
-    expose :
-      - "4200"
-    ports : 
-      - "4200:4200"
+  # ui : 
+  #   build : ./UserUI
+  #   expose :
+  #     - "4200"
+  #   ports : 
+  #     - "4200:4200"
 
   oauthservice:
     build: ./OAuthService
